@@ -18,13 +18,27 @@ public class lotus extends Actor
         move(1);
         setRotation(90);
         setLocation(getX(),getY()+2);
+        //prangrang();
         remove();
+       
     }    
     public void remove(){
-        if(isTouching(charector.class)||isAtEdge()){
-        getWorld().removeObject(this);
+        if(isAtEdge()){getWorld().removeObject(this);
         }
-       
+        if(isTouching(charector.class)){
+            getWorld().removeObject(this);
+            charector.pr = true;
+            charector.time = 100;
+        }
     }
-   
+    /*public void prangrang(){
+        int time = 20;
+        if(isTouching(lotus.class)){
+           time--; 
+           setImage("01.png");
+        if(time == 0){
+           setImage("chaSR.png");
+         }   
+        }
+    }*/
 }

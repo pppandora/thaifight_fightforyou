@@ -19,7 +19,9 @@ public class charector extends Actor
     public int ySpeed;
     public int groundLevel=310;
     public int heart = 5;
+    public static boolean pr = false;
     int delay;
+    public static int time = 0;
     public charector(){
         delay = 30;
     }
@@ -59,13 +61,7 @@ public class charector extends Actor
         }
     
     }    
-    public void prangrang(){
-        if(isTouching(lotus.class)){
-           setImage("01.png");
-        }
-    
-    }
-    
+        
     public void action(){
        if(Greenfoot.isKeyDown("right")){
            move(3);
@@ -125,6 +121,18 @@ public class charector extends Actor
            getWorld().removeObject(this);  
            
         }
+    }
+    public void prangrang(){
+        if(time > 0){
+            time--;
+        }else{
+            pr = false;
+        }
+        if(pr == true){
+            setImage("01.png");
+        }else{
+            setImage("chaSR.png");
+        }   
     }
 }
 

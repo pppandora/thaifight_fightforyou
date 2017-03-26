@@ -24,6 +24,7 @@ public class reset3 extends botton
             Greenfoot.setWorld(new LevelThree());
             
             Score.score = 0;
+            charector.HP=100;
         } 
     }  
 }

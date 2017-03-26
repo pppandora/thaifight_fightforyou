@@ -23,6 +23,7 @@ public class reset2 extends botton
             Greenfoot.setWorld(new LevelTwo());
             
             Score.score = 0;
+            charector.HP=100;
         } 
     } 
 }
