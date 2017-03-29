@@ -16,6 +16,7 @@ public class lv2 extends botton
     {
         // Add your action code here.
         checkClick();
+        change();
     }    
     public void checkClick(){
         if(Greenfoot.mouseClicked(this)){
@@ -23,4 +24,12 @@ public class lv2 extends botton
             Greenfoot.setWorld(new LevelTwo());
         } 
     }   
+    public void change(){
+        if(Greenfoot.mouseMoved(this)){
+            setImage("levbot20.png");
+        }else{
+            setImage("levbot2.png");
+        }
+        
+    }
 }
