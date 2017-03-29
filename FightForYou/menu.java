@@ -22,6 +22,7 @@ public class menu extends botton
             Greenfoot.playSound("click.wav");
             Greenfoot.setWorld(new Menupage());
             Score.score = 0;
+             charector.HP=100;
         } 
     }    
 }

@@ -35,6 +35,7 @@ public class charector extends Actor
         delay++;
         monshoot();
         prangrang();
+        touching();
        
     }
 
@@ -99,7 +100,7 @@ public class charector extends Actor
         }
     }
      public void CheckDie(){
-      if(isTouching(Monster.class)||isTouching(Boss.class)||isTouching(Big.class)){
+      if(isTouching(Monster.class)||isTouching(Boss.class)||isTouching(dd.class)){
          HP--;
          if(HP==0){
            Greenfoot.setWorld(new Lose());  
@@ -134,5 +135,11 @@ public class charector extends Actor
             setImage("chaSR.png");
         }   
     }
+    public void touching(){
+    if(isTouching(durain.class)){
+    charector.HP --;
+    }
+    }
+     
 }
 

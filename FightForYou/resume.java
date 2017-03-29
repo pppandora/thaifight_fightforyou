@@ -16,6 +16,7 @@ public class resume extends botton
     {
         // Add your action code here.
         checkClick();
+        set();
     }    
     public void checkClick(){
         if(Greenfoot.mouseClicked(this)){
@@ -23,6 +24,13 @@ public class resume extends botton
             Greenfoot.setWorld(new Menupage());
             
             Score.score = 0;
+            
         } 
     }    
+    public void set(){
+        if(Greenfoot.mouseClicked(this)){
+            charector.HP = 100;
+            LevelOne.timee=3600;
+        }
+    }
 }

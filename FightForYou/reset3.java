@@ -25,6 +25,7 @@ public class reset3 extends botton
             
             Score.score = 0;
             charector.HP=100;
+            LevelThree.timee=3600;
         } 
     }  
 }

@@ -21,9 +21,9 @@ public class reset2 extends botton
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("click.wav");
             Greenfoot.setWorld(new LevelTwo());
-            
-            Score.score = 0;
             charector.HP=100;
+            Score.score = 0;
+            LevelTwo.timee = 3600;
         } 
     } 
 }

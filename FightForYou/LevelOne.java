@@ -50,9 +50,6 @@
         
         }
        
-        
-    
-       
        public void addmonster(){
             
            time++;
@@ -73,16 +70,15 @@
         
         }
         public void random (){
-        int x = Greenfoot.getRandomNumber(3);
-        int i = Greenfoot.getRandomNumber(2);
-        addObject(new clound (c[x]),62,51);
-        addObject(new sun (s[0]),743,24);
-        addObject(new bird (b[i]),62,51);
+            int x = Greenfoot.getRandomNumber(3);
+            int i = Greenfoot.getRandomNumber(2);
+            addObject(new clound (c[x]),62,51);
+            addObject(new sun (s[0]),743,24);
+            addObject(new bird (b[i]),62,51);
        }
         public void time(){
             if(timee>0){
-            showText(" "+timee/50 , 300,20);
-            showText(" "+timee/5 , 300,20);
+            showText(" "+timee/30 , 300,20);
             timee--;
             if(timee == 0){
                 Greenfoot.setWorld(new Lose());
@@ -92,16 +88,14 @@
        public void randomdurain(){
         timedurain--;
         if(timedurain==0){
-        addObject(new durain(),Greenfoot.getRandomNumber(800),0);
-        timedurain=60;
+          addObject(new durain(),Greenfoot.getRandomNumber(800),0);
+          timedurain=60;
         }
         
         }
-       
-       
-     
+            
         public void stopped(){
-          sound.pause();
+          sound.stop();
        }   
      
     }

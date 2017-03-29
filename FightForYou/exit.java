@@ -22,7 +22,8 @@ public class exit extends botton
             Greenfoot.playSound("click.wav");
             
             Greenfoot.setWorld(new Startpage());
-            
+            charector.HP=100;
         } 
+        
     } 
 }

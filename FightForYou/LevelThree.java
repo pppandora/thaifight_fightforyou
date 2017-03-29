@@ -53,9 +53,6 @@ public class LevelThree extends World
           public void time(){
             if(timee>0){
             showText(" "+timee/60 , 300,20);
-
-            showText(" "+timee , 300,20);
-                
             timee--;
             if(timee == 0){
                 Greenfoot.setWorld(new Lose());
@@ -75,48 +72,40 @@ public class LevelThree extends World
           }
 
            if(getObjects(b.class).isEmpty()){
-          if(moncount == 30 &&a == true){
-            
-              d= false;
-             
-             
-             addObject(new b(),785,310);
-              
+            if(moncount == 30 &&a == true){
+            d= false;
+            addObject(new b(),785,310);
                
-           if(getObjects(a.class).isEmpty()){
-          if(moncount == 10 &&a == true){
-              d= false;
-             
-             addObject(new a(),785,310);
+             if(getObjects(a.class).isEmpty()){
+               if(moncount == 10 &&a == true){
+                 d= false;
+               
+                 addObject(new a(),785,310);
             
 
-             count++;
+                  count++;
+                
             
-            
-          }
-        }
-         if(getObjects(tuow.class).isEmpty()){ 
-          if(count== 2 && e == true){
-             
-             
-             addObject(new dd(),785,310);
-            
-            a= false;
-            e= false;
+              }
             }
-        }
-        }
-    }
-}
-    public void random (){
+            if(getObjects(tuow.class).isEmpty()){ 
+              if(count== 2 && e == true){
+                addObject(new dd(),785,310);
+                a= false;
+                e= false;
+                }
+              }
+          }
+       }
+   }
+   public void random (){
         int x = Greenfoot.getRandomNumber(3);
         addObject(new clound (c[x]),62,51);
         addObject(new sun (s[0]),743,24);
         addObject(new bird (b[Greenfoot.getRandomNumber(2)]),62,51+(Greenfoot.getRandomNumber(10)));
-       }  
-     
-    public void stopped(){
+   }  
+   public void stopped(){
         sound.pause();
-    }
+   }
 }
 
