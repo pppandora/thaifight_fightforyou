@@ -13,7 +13,9 @@ public class Bullet extends game
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private static final int damage = 10;
-    
+    public static boolean check = true;
+    //GreenfootImage a = new GreenfootImage("chaL.png");
+   // GreenfootImage b = new GreenfootImage("chaR.png");
     
     /** A bullet looses one life each act, and will disappear when life = 0 */
     /**
@@ -21,16 +23,16 @@ public class Bullet extends game
      */
     public void act()
     {
-      
+     
       setLocation(getX()+10,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
          return;
       }
-     
+      
       countScore();
       checkBulletHit();
-        
+      
     }
     
     /**
@@ -53,4 +55,25 @@ public class Bullet extends game
           
      }  
    }
+   public void check(){
+    if(getImage().equals(charector.shoot)){
+        setLocation(getX()+10,getY());
+        if(isAtEdge()){
+         getWorld().removeObject(this);
+         return;
+        }
+    }
+       else if(getImage().equals(charector.shoot2)){
+        setLocation(getX()+10,getY());
+         if(isAtEdge()){
+         getWorld().removeObject(this);
+         return;
+       }
+    
+    }
+   }
 }
+
+
+
+

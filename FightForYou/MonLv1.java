@@ -13,15 +13,16 @@ public class MonLv1 extends Monster
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
  
-int life =100;
+   int life =100;
  
-public void act()
-{
+   public void act()
+   {
        movement();
-}
+  }
   public void hit(int damage) {
         life = life - damage;
         if(life <= 0) 
            getWorld().removeObject(this);         
     }
 }
+

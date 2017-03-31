@@ -1,26 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class bu here.
+ * Write a description of class bullettboss here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class bu extends game
+public class bullettboss extends game
 {
+    private static final int damage2 = 10;
     /**
-     * Act - do whatever the bu wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-   private static final int damage2 = 10;
-    /**
-     * Act - do whatever the bulletboss wants to do. This method is called whenever
+     * Act - do whatever the bullettboss wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
-         setLocation(getX()+30,getY());
+       setLocation(getX()-30,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
          return;
@@ -28,20 +23,20 @@ public class bu extends game
          
        countScore();
       
-      checkBulletHitya();
-       
+      checkBulletHitit();
+     
     }    
-    
-     private void checkBulletHitya()
+    private void checkBulletHitit()
     {
-        Big mon = (Big) getOneIntersectingObject(Big.class);
+        Boss mon = (Boss) getOneIntersectingObject(Boss.class);
       
       if (mon != null){
-           mon.hitya(damage2);
+           mon.hitit(damage2);
            getWorld().removeObject(this);
       }
           
     }
+    
     public void countScore(){
      if(isTouching(a.class)||isTouching(b.class)||isTouching(cc.class)||isTouching(dd.class))   
     {
@@ -50,3 +45,4 @@ public class bu extends game
     }
   }
 }
+

@@ -1,14 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class charector here.
+ * Write a description of class Char2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class charector extends Actor
-{
-    /**
+public class Char2 extends Actor
+{ /**
      * Act - do whatever the charector wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -16,20 +15,19 @@ public class charector extends Actor
     public GreenfootSound guns = new GreenfootSound("gunboss.wav");
     public GreenfootSound jump = new GreenfootSound("jump.wav");
     
-    public static GreenfootImage left = new GreenfootImage("chaL.png");
-    public static GreenfootImage right = new GreenfootImage("chaR.png");
-    public static GreenfootImage shoot = new GreenfootImage("chaAc.png");
-    public static GreenfootImage shoot2 = new GreenfootImage("chaAcL.png");
-    public static GreenfootImage neww = new GreenfootImage("011.png");
+    public static GreenfootImage left = new GreenfootImage("011.png");
+    public static GreenfootImage right = new GreenfootImage("01.png");
+    public static GreenfootImage shoot = new GreenfootImage("1.png");
+    public static GreenfootImage shoot2 = new GreenfootImage("11.png");
     
-    public static int HP = 100;
+    
     public int ySpeed;
-    public int groundLevel=310;
+    public int groundLevel=286;
     public int heart = 5;
     public static boolean pr = false;
     int delay;
     public static int time = 0;
-    public charector(){
+    public Char2(){
         delay = 30;
     }
     public void act() 
@@ -38,12 +36,8 @@ public class charector extends Actor
         action(); 
         checkFire();
         jump();
-        CheckDie();
         delay++;
-        monshoot();
-        //prangrang();
-        touching();
-        plusHP();
+        bump();
     }
 
     public void checkFire()
@@ -63,7 +57,7 @@ public class charector extends Actor
                gun.play();
                gun.setVolume(10);
             }
-        }
+      }
     
         if(Greenfoot.isKeyDown("x")) {
                if(delay>=30){
@@ -71,22 +65,19 @@ public class charector extends Actor
               if(getImage().equals(right)||getImage().equals(shoot)){
                  setImage(shoot);
                  getWorld().addObject(new bulletboss(), getX(), getY());
-              getWorld().addObject(new bu(), getX(), getY());
+                 getWorld().addObject(new bu(), getX(), getY());
                 }
               if (getImage().equals(left)||getImage().equals(shoot2)){
                  setImage(shoot2);
                 getWorld().addObject(new bullettboss(), getX(), getY());
                  getWorld().addObject(new buu(), getX(), getY());
                }
-             
               guns.play();
               guns.setVolume(70);
-            }
-        }
-    
-    }    
-        
-    public void action(){
+         }
+     }
+  }    
+  public void action(){
        if(Greenfoot.isKeyDown("right")){
            move(3);
            setImage(right);
@@ -97,9 +88,9 @@ public class charector extends Actor
            setImage(left);
        } 
             
-    }
-     public void jump()
-    {
+  }
+  public void jump()
+  {
         boolean onGround = (getY() == groundLevel);
         if (!onGround)
         {
@@ -121,54 +112,21 @@ public class charector extends Actor
                jump.setVolume(70);
             }
         }
-    }
-     public void CheckDie(){
-      if(isTouching(Monster.class)||isTouching(Boss.class)||isTouching(dd.class)){
-         HP--;
-         if(HP==0){
-           Greenfoot.setWorld(new Lose());  
-          }
-      } 
-    }
-    public void monshoot(){
-     if(isTouching(shoot.class)){
-        HP--;
-         if(HP==0){
-           Greenfoot.setWorld(new Lose());  
-          }
-      }
-    }
-   
-    public void hit2(int damage2) {
+  }
+  public void hit2(int damage2) {
         heart = heart - damage2;
         if(heart == 0) {
            getWorld().removeObject(this);  
            
         }
+   }
+   public void bump(){
+      if(isTouching(MonLv1.class)){
+          getWorld().removeObject(new MonLv1());
+      }
+      else if(isTouching(cc.class)){
+          getWorld().removeObject(new cc());
+      }
     }
-    public void prangrang(){
-        if(time > 0){
-            time--;
-        }else{
-            pr = false;
-        }
-        if(pr == true){
-            getWorld().removeObject(this);
-               
-        }else{
-            getWorld().addObject(this,20,310);
-           
-        }   
-    }
-    public void touching(){
-      if(isTouching(durain.class)){
-         charector.HP--;
-       }
-    }
-    public void plusHP(){
-        if(isTouching(lotus.class)){
-            HP = 100;
-        }
-    } 
 }
 

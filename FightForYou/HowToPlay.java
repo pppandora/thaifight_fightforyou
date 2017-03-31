@@ -19,7 +19,6 @@ public class HowToPlay extends World
         super(800, 400, 1); 
         addObject(new exithwtp(),771,20);
     }
-
     public void stopped(){
         sound.pause();
     }

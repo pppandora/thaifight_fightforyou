@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  public class LevelTwo extends World
  {
    public GreenfootSound sound = new GreenfootSound ("bg.wav");
-   static int timee = 3600;
+   public static boolean pr = false;
+   public static int timee = 3600;
    int tt;
    int time;
    int timer;
@@ -47,8 +48,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
       }
       time();
       ranlo();
+      
    }
-       
+ 
    public void time(){
       if(timee>0){
          showText(" "+timee/40 , 300,20);
@@ -95,8 +97,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
             addObject(new sun (s[0]),743,24);
             addObject(new bird (b[Greenfoot.getRandomNumber(2)]),62,51+(Greenfoot.getRandomNumber(10)));
            }  
-     public void stopped(){
-                sound.pause();
+           public void stopped(){
+         sound.pause();
      }
                
   }  

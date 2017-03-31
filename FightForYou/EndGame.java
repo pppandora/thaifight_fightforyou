@@ -23,10 +23,10 @@ public class EndGame extends World
          addObject(new exit(),157,380);
          showText(" Score :"+Score.score,393,271);
          bg.play();
-         bg.setVolume(80);
+         bg.setVolume(90);
          
     }
-     
+    
     public void stopped(){
         sound.stop();
         bg.stop();

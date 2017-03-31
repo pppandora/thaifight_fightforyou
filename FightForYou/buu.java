@@ -1,17 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class bu here.
+ * Write a description of class buu here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class bu extends game
+public class buu extends game
 {
-    /**
-     * Act - do whatever the bu wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
    private static final int damage2 = 10;
     /**
      * Act - do whatever the bulletboss wants to do. This method is called whenever
@@ -20,7 +16,7 @@ public class bu extends game
     public void act() 
     {
         // Add your action code here.
-         setLocation(getX()+30,getY());
+         setLocation(getX()-30,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
          return;

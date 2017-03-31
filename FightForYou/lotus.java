@@ -18,9 +18,9 @@ public class lotus extends Actor
         move(1);
         setRotation(90);
         setLocation(getX(),getY()+2);
-        prangrang();
+        //prangrang();
         remove();
-       
+        
     }    
     public void remove(){
         if(isAtEdge()||isTouching(charector.class)){
@@ -30,7 +30,8 @@ public class lotus extends Actor
     public void prangrang(){
          if(isTouching(charector.class)){
             charector.pr = true;
-            charector.time = 100;
+            charector.time = 360;
         }
     }
-}
+   }
+

@@ -103,7 +103,8 @@ public class LevelThree extends World
         addObject(new clound (c[x]),62,51);
         addObject(new sun (s[0]),743,24);
         addObject(new bird (b[Greenfoot.getRandomNumber(2)]),62,51+(Greenfoot.getRandomNumber(10)));
-   }  
+   }
+   
    public void stopped(){
         sound.pause();
    }

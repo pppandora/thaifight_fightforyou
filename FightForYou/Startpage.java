@@ -19,13 +19,13 @@ public class Startpage extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 400, 1); 
        addObject(new start(),408,348);
-        sound.setVolume(60);
+        sound.setVolume(55);
     }
     public void started(){
-       sound.playLoop();
+       sound.play();
       
     }
     public void stopped(){
-        sound.pause();
+       sound.pause();
     }
 }
