@@ -15,6 +15,7 @@ public class bullettboss extends game
      */
     public void act() 
     {
+        // set the bullet shoot from the right side of charector
        setLocation(getX()-30,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
@@ -28,6 +29,7 @@ public class bullettboss extends game
     }    
     private void checkBulletHitit()
     {
+        // if touch monster remove it
         Boss mon = (Boss) getOneIntersectingObject(Boss.class);
       
       if (mon != null){
@@ -38,6 +40,7 @@ public class bullettboss extends game
     }
     
     public void countScore(){
+        // check score +10
      if(isTouching(a.class)||isTouching(b.class)||isTouching(cc.class)||isTouching(dd.class))   
     {
           Score.score=Score.score+10;

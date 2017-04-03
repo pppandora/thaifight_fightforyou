@@ -20,6 +20,7 @@ public class bu extends game
     public void act() 
     {
         // Add your action code here.
+       // set the bullet shoot from the left side of charector
          setLocation(getX()+30,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
@@ -34,6 +35,7 @@ public class bu extends game
     
      private void checkBulletHitya()
     {
+        //check that hit the monster and remove it
         Big mon = (Big) getOneIntersectingObject(Big.class);
       
       if (mon != null){
@@ -43,6 +45,7 @@ public class bu extends game
           
     }
     public void countScore(){
+        // check score +10
      if(isTouching(a.class)||isTouching(b.class)||isTouching(cc.class)||isTouching(dd.class))   
     {
           Score.score=Score.score+10;

@@ -51,7 +51,7 @@
         }
        
        public void addmonster(){
-            
+           // add a monster 
            time++;
           if (time ==60 && d==true){
                addObject(new MonLv1(),Greenfoot.getRandomNumber(600)+800,310);

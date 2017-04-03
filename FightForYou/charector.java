@@ -41,14 +41,13 @@ public class charector extends Actor
         CheckDie();
         delay++;
         monshoot();
-        //prangrang();
         touching();
         plusHP();
     }
 
     public void checkFire()
     {
-     
+        //to shoot the bullet
         if(Greenfoot.isKeyDown("z")) {
             if(delay>=30){
                
@@ -87,6 +86,7 @@ public class charector extends Actor
     }    
         
     public void action(){
+        //to check key for moving
        if(Greenfoot.isKeyDown("right")){
            move(3);
            setImage(right);
@@ -100,12 +100,13 @@ public class charector extends Actor
     }
      public void jump()
     {
+        //Jumping 
         boolean onGround = (getY() == groundLevel);
         if (!onGround)
         {
            ySpeed++;
            setLocation(getX(), getY()+ySpeed);
-           //turn();
+          
             if (getY()==500)
             {
                 setLocation(getX(), groundLevel);
@@ -123,6 +124,7 @@ public class charector extends Actor
         }
     }
      public void CheckDie(){
+         //check if bump then decrease HP
       if(isTouching(Monster.class)||isTouching(Boss.class)||isTouching(dd.class)){
          HP--;
          if(HP==0){
@@ -131,6 +133,7 @@ public class charector extends Actor
       } 
     }
     public void monshoot(){
+        //if touching a boss bullet - HP
      if(isTouching(shoot.class)){
         HP--;
          if(HP==0){
@@ -146,26 +149,14 @@ public class charector extends Actor
            
         }
     }
-    public void prangrang(){
-        if(time > 0){
-            time--;
-        }else{
-            pr = false;
-        }
-        if(pr == true){
-            getWorld().removeObject(this);
-               
-        }else{
-            getWorld().addObject(this,20,310);
-           
-        }   
-    }
     public void touching(){
+        // - HP when it touch this object
       if(isTouching(durain.class)){
          charector.HP--;
        }
     }
     public void plusHP(){
+        //if touching a lotus HP reduce back to 100%
         if(isTouching(lotus.class)){
             HP = 100;
         }

@@ -34,6 +34,7 @@ public class a extends Boss
     
       public void walk(){
       if(isAtEdge()){
+           //walk go and back
         setImage("boss02.png");
         direc = -direc;
         }

@@ -20,7 +20,7 @@ public class durain extends Actor
          remove();
         // Add your action code here.
     }
-    public void remove(){
+    public void remove(){//To check touching and remove object
         if(isTouching(charector.class)||isAtEdge()){
         getWorld().removeObject(this);
         }

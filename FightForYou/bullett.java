@@ -15,7 +15,7 @@ public class bullett extends game
      */
     public void act() 
     {
-     
+      // set a bullet side go to the right side of charector
       setLocation(getX()-10,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
@@ -32,6 +32,7 @@ public class bullett extends game
      */
     private void checkBulletHit()
     {
+        //check when it hit a monster remove it
         Monster monster = (Monster) getOneIntersectingObject(Monster.class);
       
       if (monster != null){
@@ -41,6 +42,7 @@ public class bullett extends game
           
     }
      public void countScore(){
+            // score increase when touching a monster
      if(isTouching(tuow.class)||isTouching(MonLv1.class))   
      {
           Score.score++;

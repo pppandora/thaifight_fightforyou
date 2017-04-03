@@ -19,13 +19,14 @@ public class start extends Actor
         point();
     }    
     public void checkClick(){
-        
+        //to change to a new world
         if(Greenfoot.mouseClicked(this)){
            Greenfoot.setWorld(new Menupage());
            Greenfoot.playSound("click.wav");
         }
      }
     public void point(){
+        //change an image when mouse move to this botton
          if(Greenfoot.mouseMoved(this)){
            setImage("start2.png");
         }else

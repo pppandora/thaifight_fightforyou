@@ -31,7 +31,7 @@ public class dd extends Big
         
     }    
     public void shoot(){
-        
+            // shoot a bullet
          time++;
           if (time == 90){
              
@@ -50,6 +50,7 @@ public class dd extends Big
     }
 
        public void walk(){
+           //movement
       if(isAtEdge()){
         direc = -direc;
         }

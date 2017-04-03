@@ -16,6 +16,7 @@ public class shoot extends game
    public void act() 
     {
         // Add your action code here.
+        // set location of boss's bullet
       setLocation(getX()-30,getY());
       if(isAtEdge()){
          getWorld().removeObject(this);
@@ -25,6 +26,7 @@ public class shoot extends game
     }    
     private void checkBulletHit2()
     {
+        // if touch charector remove it
         charector cha = (charector) getOneIntersectingObject(charector.class);
       
       if (cha != null){
@@ -34,6 +36,7 @@ public class shoot extends game
           
     }
     public void check(){
+        //if touching bullet from charector remove
         if(isTouching(bulletboss.class)){
             getWorld().removeObject(this);
         }

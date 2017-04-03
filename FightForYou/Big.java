@@ -26,6 +26,7 @@ public class Big extends Actor
    
     
     public void movement(){
+        //set a movement of bot
         move(-4);
         if(isAtEdge()){
         getWorld().removeObject(this);
@@ -34,6 +35,7 @@ public class Big extends Actor
     
  
  public void hitya(int damage) {
+        // check a damage of bullet from boss
         life = life - damage;
         if(life <= 0) 
            getWorld().removeObject(this);         

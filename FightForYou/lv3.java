@@ -19,12 +19,14 @@ public class lv3 extends botton
         change();
     }    
     public void checkClick(){
+        //set a sound and mouse click , change the world to new world
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("click.wav");
             Greenfoot.setWorld(new LevelThree());
         } 
     }   
     public void change(){
+        // set image when mouse move
         if(Greenfoot.mouseMoved(this)){
             setImage("levbot30.png");
         }else{

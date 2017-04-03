@@ -51,6 +51,7 @@ public class LevelThree extends World
          
         }
           public void time(){
+              // countdown the time
             if(timee>0){
             showText(" "+timee/60 , 300,20);
             timee--;
@@ -61,7 +62,7 @@ public class LevelThree extends World
        }
        
        public void addmonster(){
-            
+            // add a monster
            time++;
            if (time ==30&& d==true){
                addObject(new tuow(),Greenfoot.getRandomNumber(600)+800,310);
@@ -99,6 +100,7 @@ public class LevelThree extends World
        }
    }
    public void random (){
+       // random an object
         int x = Greenfoot.getRandomNumber(3);
         addObject(new clound (c[x]),62,51);
         addObject(new sun (s[0]),743,24);
@@ -106,6 +108,7 @@ public class LevelThree extends World
    }
    
    public void stopped(){
+       // to pause the sound
         sound.pause();
    }
 }

@@ -21,17 +21,22 @@ public class lotus extends Actor
         //prangrang();
         remove();
         
-    }    
+        
+    }
+        
     public void remove(){
+        //remove if this object is at edge
         if(isAtEdge()||isTouching(charector.class)){
             getWorld().removeObject(this);
         }
     }
     public void prangrang(){
+        //reduce HP back to 100%
          if(isTouching(charector.class)){
-            charector.pr = true;
-            charector.time = 360;
+            charector.HP = 100;
+        
         }
     }
+    
    }
 

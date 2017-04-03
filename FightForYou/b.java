@@ -34,9 +34,9 @@ public class b extends Boss
         
          time++;
           if (time == 90){
-              //for(int i =0;i<10;i++){
+              //shoot
                getWorld().addObject(new shoot(), getX()-50, getY());
-            //}
+            
          }
                     
              
@@ -52,6 +52,7 @@ public class b extends Boss
     
        public void walk(){
       if(isAtEdge()){
+           //walk go and back
         setImage("boss02.png");
         direc = -direc;
         }

@@ -27,14 +27,16 @@ public class Monster extends Actor
    
     
     public void movement(){
+        // set a movement
         move(-7);
         if(isAtEdge()){
-        getWorld().removeObject(this);
+          getWorld().removeObject(this);
         }
     }
     
  
   public void hit(int damage) {
+        // check damage
         life = life - damage;
         if(life <= 0) 
            getWorld().removeObject(this);         

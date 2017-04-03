@@ -19,6 +19,7 @@ public class exithwtp extends botton
         checkClick();
     }    
     public void checkClick(){
+        //set a sound and mouse click , change the world to new world
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("click.wav");
             Greenfoot.setWorld(new Menupage());

@@ -52,6 +52,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
    }
  
    public void time(){
+       // countdown the time
       if(timee>0){
          showText(" "+timee/40 , 300,20);
          timee--;
@@ -61,6 +62,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
        }
    }
    public void ranlo(){
+       // random a lotus
       tt++;
        if(tt==360){
          addObject(new lotus(),Greenfoot.getRandomNumber(800), 0);
@@ -68,11 +70,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
    }
            
      public void addmonster(){
+            //add a monster
             time++;
-            if (time ==60 && d==true){
-               addObject(new MonLv1(),Greenfoot.getRandomNumber(600)+800,310);
+            if (time ==40 && d==true){
+               addObject(new tuow(),Greenfoot.getRandomNumber(600)+800,310);
                moncount++;
-    
+     
               if(cc.class != null){
                  if(b.class != null){
     
@@ -92,12 +95,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
             }
             }
      public void random (){
+            // random a clound,sun,and bird
             int x = Greenfoot.getRandomNumber(3);
             addObject(new clound (c[x]),62,51);
             addObject(new sun (s[0]),743,24);
             addObject(new bird (b[Greenfoot.getRandomNumber(2)]),62,51+(Greenfoot.getRandomNumber(10)));
            }  
            public void stopped(){
+         //to pause the sound when mouse click pause
          sound.pause();
      }
                

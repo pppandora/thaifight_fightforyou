@@ -14,7 +14,7 @@ public class clound extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        // Delete object if it at edge
         move(1);
         if(isAtEdge()){
             getWorld().removeObject(this);
